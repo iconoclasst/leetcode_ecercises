@@ -2,16 +2,35 @@
 #longgest prefix string
 # Encontrar o prefixo comum mais longo entre todas as strings de um array de strings
 
-str = ["flower","flow","flight"]
 
-prefix = max(str)
+def lcp(str):
+    words = sorted(str)
 
-for i in range(len(str)):
-    comp = str[i]
-    for j in range(len(comp) -1, -1, -1):
-        if comp[j] != comp[j - 1]:
-            prefix[-1] = ''
+    w1 = words[0]
+    w2 = words[-1]
+
+    resp = ""
+
+    for i in range(len(min(w1, w2))):
+        if w1[i] == w2[i]:
+            resp += w1[i]
         else:
             break
+    return resp
 
-print(max(str))
+str = ["flower","flow","flight"]
+print(lcp(str))
+
+
+
+
+
+
+
+        
+
+        
+        
+    
+
+# print(resp)
